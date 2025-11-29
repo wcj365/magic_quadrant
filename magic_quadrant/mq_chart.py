@@ -32,10 +32,11 @@ def create(df, x, x_min, x_max, y, y_min, y_max, text, lower_left, lower_right, 
     fig.add_shape(type="line", x0=x_max, y0=y_min, x1=x_max, y1=y_max, line=dict(color="black"))
     fig.add_shape(type="line", x0=x_min, y0=y_max, x1=x_max, y1=y_max, line=dict(color="black"))
 
-    fig.add_annotation(x=4, y=5, xanchor="center", yanchor="top", text=upper_right, showarrow=False, font=dict(family="Helvetica Bold",size=18, color="blue"))
-    fig.add_annotation(x=2, y=5, xanchor="center", yanchor="top",  text=upper_left, showarrow=False, font=dict(family="Helvetica Bold",size=18, color="blue"))
-    fig.add_annotation(x=4, y=1, xanchor="center", yanchor="bottom", text=lower_right, showarrow=False, font=dict(family="Helvetica Bold",size=18, color="blue"))
-    fig.add_annotation(x=2, y=1, xanchor="center", yanchor="bottom", text=lower_left, showarrow=False, font=dict(family="Helvetica Bold",size=18, color="blue"))
+    fig.add_annotation(x=x_min, y=y_max, xanchor="left", yanchor="top",  text=upper_left, showarrow=False, font=dict(family="Helvetica Bold",size=18, color="blue"))
+    fig.add_annotation(x=x_max, y=y_max, xanchor="right", yanchor="top", text=upper_right, showarrow=False, font=dict(family="Helvetica Bold",size=18, color="blue"))
+    fig.add_annotation(x=x_min, y=y_min, xanchor="left", yanchor="bottom", text=lower_left, showarrow=False, font=dict(family="Helvetica Bold",size=18, color="blue"))
+    fig.add_annotation(x=x_max, y=y_min, xanchor="right", yanchor="bottom", text=lower_right, showarrow=False, font=dict(family="Helvetica Bold",size=18, color="blue"))
+ 
 
     # Adjust text labels
     fig.update_traces(textposition="top center")
