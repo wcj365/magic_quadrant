@@ -3,7 +3,7 @@
 import plotly.express as px
 
 
-def create_mq(df, x, x_min, x_max, y, y_min, y_max, text, lower_left, lower_right, upper_left, upper_right, height=800, width=800):
+def create(df, x, x_min, x_max, y, y_min, y_max, text, lower_left, lower_right, upper_left, upper_right, height=800, width=800):
 
     # Consolidate rows with same x and y value by concatenating text labels
     df = (
